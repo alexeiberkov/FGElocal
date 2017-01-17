@@ -1,0 +1,1 @@
+server1.sh && server2.sh
