@@ -37,6 +37,8 @@ if ($_POST['branchName'] && $_POST['config']) {
     $versionFileContent = file("build/version.js");
     $versionFileContent[1] = "'branch': '" . $branchName . "',";
     file_put_contents("build/version.js", implode('', $versionFileContent));
+    $indexTemplateContent = file("app/index_template.html");
+    file_put_contents("app/index_template.html", str_replace("{%=o.htmlWebpackPlugin.options.title%}", $branchName.'_'.$testConfigFile, $indexTemplateContent));
 
 
 //5. Build the branch

@@ -1,1 +1,2 @@
-server1.sh && server2.sh
+START server1.sh
+START server2.sh
